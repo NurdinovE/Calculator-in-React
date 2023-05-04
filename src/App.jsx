@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import Input from "./Components/Input/Input.jsx"
 import Button from "./Components/Button/Button.jsx";
 
 import * as math from "mathjs";
 
 import './App.css'
-import {number} from "mathjs";
+
 
 function App() {
     const [text, setText] = useState("");
@@ -16,7 +16,7 @@ function App() {
         '7', '8', '9',
         '4', '5', '6',
         '1', '2', '3',
-        '0','.']
+        '0', '.']
     const symbols = ['+', '-', '/', '*']
 
     const addToText = (val) => {
@@ -24,13 +24,16 @@ function App() {
     };
 
     const calculateResult = () => {
-        const input = text.join(""); // Remove commas
-        const res = math.evaluate(input)
-
-        if (res === 0 || res === Infinity){
+        const input = text.join("");
+        try {
+            const res = math.evaluate(input)
+            if (res === 0 || res === Infinity) {
+                setResult('ОШИБКА')
+            } else {
+                setResult(res);
+            }
+        } catch (e) {
             setResult('ОШИБКА')
-        } else{
-            setResult(res);
         }
     };
 
