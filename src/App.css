@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+  background: whitesmoke;
+  padding: 100px 0;
+}
+.App .calcWrapper {
+  background-color: #141a26;
+  width: auto;
+  padding: 15px;
+  border-radius: 16px;
+}
+.App .calcWrapper .calcKeypad {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.App .calcWrapper .calcKeypad .calcSymbols .symbol__row {
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px 80px 80px;
+}
+.App .calcWrapper .calcKeypad .calcSymbols .number__row {
+  display: grid;
+  grid-template-columns: 160px 160px 160px;
+}
+
+@media (max-width: 768px) {
+  .App .calcWrapper .calcKeypad .calcSymbols .symbol__row {
+    grid-template-columns: 50px 50px 50px 50px 50px 50px;
+  }
+  .App .calcWrapper .calcKeypad .calcSymbols .number__row {
+    grid-template-columns: 100px 100px 100px;
+  }
+}
+@media (max-width: 480px) {
+  .App .calcWrapper .calcKeypad .calcSymbols .symbol__row {
+    grid-template-columns: 45px 45px 45px 45px 45px 45px;
+  }
+  .App .calcWrapper .calcKeypad .calcSymbols .number__row {
+    grid-template-columns: 90px 90px 90px;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */
